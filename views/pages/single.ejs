@@ -1,0 +1,33 @@
+<!-- views/pages/single.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+    <h3 class="ui center aligned icon header">
+        <%= contacto.nombre %>
+    </h3>
+</header>
+
+<main>
+    <div class="ui grid container">
+        <div class="ui three column centered grid">
+            <div class="column">
+                <img class="ui medium centered image" src="<%= image_url(contacto.image_id, {width: 200, height: 200, radius: 100, crop: "fill", border: "10px_solid_grey", effect: "grayscale"}) %>">
+                <br>
+                <p><i class="male icon"></i><strong>Nombre: </strong> <%= contacto.nombre %></p>
+                <p><i class="male icon"></i><strong>Apellido: </strong> <%= contacto.apellido %></p>
+                <p><i class="envelope icon"></i><strong>Correo Electronico: </strong><%= contacto.email %></p>
+                <p><i class="calendar icon"></i><strong>Fecha de Nacimiento: </strong> <%= contacto.fecha %></p>
+            </div>
+        </div>
+    </div>
+
+    <% include ../partials/scripts %>
+</body>
+</html>

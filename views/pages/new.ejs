@@ -1,0 +1,51 @@
+<!-- views/pages/new.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+    <h3 class="ui center aligned icon header">
+       Nuevo Contacto
+    </h3>
+</header>
+
+<main>
+    <div class="ui grid container">
+        <div class="ui two column centered grid">
+            <div class="column">
+                <form action="/create" method="post" enctype="multipart/form-data" class="ui form">
+                    <div class="field">
+                        <label>Nombre</label>
+                        <input name="nombre" type="text" placeholder="Ingresar Nombre" required="required"/>
+                    </div>
+                    <div class="field">
+                        <label>Apellido</label>
+                        <input name="apellido" type="text" placeholder="Ingresar Apellido" required="required"/>
+                    </div>
+                    <div class="field">
+                        <label>Correo Electronico</label>
+                        <input name="email" type="text" placeholder="Ingresar Correo Electronico" required="required"/>
+                    </div>
+                    <div class="field">
+                        <label>Fecha de Nacimiento</label>
+                        <input name="fecha" type="date"required="required"/>
+                    </div>
+                    <div class="field">
+                        <label>Image</label>
+                        <input name="image" type="file" />
+                    </div>
+                    <button class="ui primary button" type="submit">Guardar Contacto</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<% include ../partials/scripts %>
+</body>
+</html>

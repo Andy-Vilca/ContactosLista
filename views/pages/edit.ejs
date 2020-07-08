@@ -1,0 +1,54 @@
+<!-- views/pages/new.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+    <h3 class="ui center aligned icon header">
+        Edit: <%= contacto.nombre %>
+    </h3>
+</header>
+
+<main>
+    <div class="ui grid container">
+        <div class="ui two column centered grid">
+            <div class="column">
+                <img class="ui medium centered image" src="<%= contacto.image %>">
+                <form action="/update" method="post" class="ui form">
+                    <div class="field">
+                        <label>Nombre</label>
+                        <input name="nombre" type="text" placeholder="Nombre" value="<%= contacto.nombre %>" required="required"/>
+                    </div>
+                    <div class="field">
+                        <label>Apellido</label>
+                        <input name="apellido" type="text" placeholder="Ingresar Apellido" value="<%= contacto.apellido %>"  required="required"/>
+                    </div>
+                    <div class="field">
+                        <label>Correo Electronico</label>
+                        <input name="email" type="text" placeholder="Ingresar Correo Electronico" value="<%= contacto.email %>"  required="required"/>
+                    </div>
+                    <div class="field">
+                        <label>Fecha de Nacimiento</label>
+                        <input name="fecha" type="date"required="required" value="<%= contacto.fecha%>" />
+                    </div>
+                    <div class="field">
+                        <label>Palabra Clave</label>
+                        <input name="image_id" type="text" placeholder="image_id" value="<%= contacto.image_id %>"/>
+                    </div>
+                    <input type="hidden" value="<%= contacto.image %>" name="image">
+                    <input type="hidden" value="<%= contacto.image_id %>" name="old_id">
+                    <button class="ui primary button" type="submit">Editar Contacto</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<% include ../partials/scripts %>
+</body>
+</html>

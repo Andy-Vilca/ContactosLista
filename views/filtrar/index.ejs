@@ -1,0 +1,55 @@
+<!-- views/admin/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+    <h3 class="ui center aligned icon header">
+        Filtrar Contactos
+    </h3>
+</header>
+
+<main>
+    <div class="ui grid container">
+        <div class="ui two column centered grid">
+            <div class="column">
+                <form class="ui form">
+                    <div class="field">
+                        <input name="q" type="text" placeholder="Search"  value="<%= searchValue %>"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="ui grid container">
+        <div class="ui three column centered grid">
+            <% contactos.forEach(function(contacto, index) { %>
+
+            <div class="column">
+                <div class="ui card">
+                    <div class="image">
+                        <img src="<%= contacto.url %>" style="max-height: 150px">
+                    </div>
+                    <div class="content">
+                        <p><strong><%= contacto.public_id %></strong></p>
+                        <div class="meta">
+                                <span class="date">
+                                    <i class="calendar icon"></i> <%= contacto.created_at %>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% }); %>
+        </div>
+    </div>
+
+    <% include ../partials/scripts %>
+</body>
+</html>
