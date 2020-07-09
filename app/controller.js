@@ -12,11 +12,28 @@ module.exports = {
     login: function(req,res){
         res.render('pages/index');
     },
+    register: function (req, res) {
+        res.render('pages/registrar');
+    },
+    registra: function (req, res) {
+            
+            var contacto = new Model({
+                name: req.body.name,
+                email: req.body.email,
+                contraseña: req.body.contraseña
+            });
+            contacto.save(function (err) {
+                if (err) {
+                    res.send(err)
+                }
+                res.redirect('/lista');
+            });
+    },
     index: function (req, res) {
-        Model.find({}, function (err, contactos) {
+        Model.find({}, function (err, lista) {
             if (err) res.send(err);
 
-            res.render('pages/lista', { contactos: contactos });
+            res.render('pages/lista', { contactos:lista });
         });
     },
     find: function (req, res) {
@@ -42,7 +59,7 @@ module.exports = {
             { width: 300, height: 300, crop: "limit", moderation: 'manual' },
             function (err, result) {
                 console.log(result);
-                var contacto = new Model({
+                var lista = new Model({
                     nombre: req.body.nombre,
                     apellido: req.body.apellido,
                     email: req.body.email,
@@ -52,7 +69,7 @@ module.exports = {
                     image_id: result.public_id
                 });
 
-                contacto.save(function (err) {
+                lista.save(function (err) {
                     if (err) {
                         res.send(err)
                     }

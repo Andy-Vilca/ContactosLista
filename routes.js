@@ -5,6 +5,8 @@ var controller = require('./app/controller');
 
 module.exports = function (app) {
     app.get('/', controller.login);
+    app.get('/register',controller.register);
+    app.post('/registra',controller.registra)
     app.get('/lista', controller.index);
     app.get('/new', controller.new);
     app.post('/create', multipartMiddleware, controller.create);

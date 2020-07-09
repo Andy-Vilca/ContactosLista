@@ -12,7 +12,7 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
-mongoose.connect('mongodb://localhost:27017/dbtest');
+mongoose.connect('mongodb://localhost:27017/dbtests');
 
 app.use(bodyParser.json())
 app.post('/login-with-facebook', async(res,req)=>{

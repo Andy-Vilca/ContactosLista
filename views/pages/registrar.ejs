@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <h1></h1>
+    </head>
+    <body>
+        <div class="column">
+            <form action="/registra" method="post" class="ui form">
+                <div class="field">
+                    <label>Nombre</label>
+                    <input name="name" type="text" placeholder="Ingresar Nombre" required="required"/>
+                </div>
+                <div class="field">
+                    <label>Correo Electronico</label>
+                    <input name="email" type="email" placeholder="Ingresar Correo Electronico" required="required"/>
+                </div>
+                <div class="field">
+                    <label>Contraseña</label>
+                    <input name="contraseña" type="password" placeholder="Ingresar Contraseña" required="required"/>
+                </div>
+                <div class="field">
+                    <label>Confirmar Contraseña</label>
+                    <input name="confirmarcontraseña" type="password" placeholder="Ingresar Contraseña" required="required"/>
+                </div>
+                <script>
+                    if(contraseña == confirmarcontraseña){
+                        console.log('ok');
+                    }
+                    else{
+                        console.log('Error');
+                    }
+                </script>
+                <button class="ui primary button" type="submit">Guardar Contacto</button>
+            </form>
+        </div>
+    </body>
+</html>
