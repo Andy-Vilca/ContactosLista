@@ -22,5 +22,8 @@
     "fetch": "^1.1.0",
     "mongoose": "^4.6.0",
     "morgan": "^1.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }

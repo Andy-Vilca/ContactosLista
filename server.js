@@ -2,17 +2,17 @@
 // Load dependencies
 var express = require('express');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
 var morgan = require('morgan');
 var user = require('./app/model.js');
 var cors = require('cors');
+var db = require('./app/db.js');
 
 var app = express();
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
-mongoose.connect('mongodb://localhost:27017/dbtests');
+
 
 app.use(bodyParser.json())
 app.post('/login-with-facebook', async(res,req)=>{
