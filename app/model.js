@@ -4,13 +4,17 @@ var Schema = mongoose.Schema;
 
 // create a schema
 var contactoSchema = new Schema({
+    name:String,
+    facebookID:String,
+    accessToken:String,
+    lista:[{
     nombre: String,
     apellido: String,
     email: String,
     fecha: String,
     image: String,
     image_id: String,
-    created_at: Date
+    created_at: Date}]
 });
 
 // the schema is useless so far
