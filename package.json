@@ -20,7 +20,7 @@
     "ejs": "^2.5.2",
     "express": "^4.14.0",
     "fetch": "^1.1.0",
-    "mongoose": "^4.6.0",
+    "mongoose": "^4.13.21",
     "morgan": "^1.7.0"
   },
   "devDependencies": {
